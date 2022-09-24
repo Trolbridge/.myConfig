@@ -246,3 +246,5 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export XDG_CONFIG_HOME=/Users/trolbridge/.emacs.d
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include"
