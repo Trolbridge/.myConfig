@@ -7,8 +7,8 @@ autoload -Uz compinit
 compinit
 
 
-source aliases.git
-source aliases.ls
+source ~/.myConfig/aliases.git
+source ~/.myConfig/aliases.ls
 
 # Check if $ZSH is empty directory
 #if [ "$(ls -A $ZSH)" ]; then
@@ -47,3 +47,4 @@ export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include"
 #export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="/opt/homebrew/Cellar/imagemagick/7.1.0-48/bin:/opt/homebrew/opt/texinfo/bin:/opt/homebrew/opt/llvm/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/opt/homebrew/opt/ccache/libexec"
 export GUILE_TLS_CERTIFICATE_DIRECTORY=/opt/homebrew/etc/gnutls/
+export PKG_CONFIG_PATH="`brew --prefix libxml2`/lib/pkgconfig"
