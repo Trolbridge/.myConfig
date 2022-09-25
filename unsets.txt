@@ -1,0 +1,20 @@
+unset EDITOR
+unset GOPATH
+unset GOBIN
+unset XDG_CONFIG_HOME
+unset GUILE_TLS_CERTIFICATE_DIRECTORY
+unset LDFLAGS
+unset CPPFLAGS
+unset PKG_CONFIG_PATH
+unset LDFLAGS
+unset CPPFLAGS
+unset LDFLAGS
+unset CFLAGS
+unset CC
+unset CXX
+unset LDFLAGS
+unset CPPFLAGS
+unset LDFLAGS
+unset CPPFLAGS
+unset PKG_CONFIG_PATH
+
