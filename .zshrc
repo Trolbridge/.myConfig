@@ -22,7 +22,10 @@ source ~/.myConfig/unsets.txt
 
 
 alias v="nvim"
-
+alias gcc="gcc-12"
+alias g++="g++-12"
+alias clang="gcc-12"
+alias clang++="g++-12"
 
 # Directory make and jump into
 m ()
@@ -36,8 +39,8 @@ export EDITOR="/usr/bin/vim"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export XDG_CONFIG_HOME="/Users/trolbridge/.myConfig"
-#export CC="clang"
-#export CXX="clang++"
+export CC="GCC"
+export CXX="G++"
 export NVM_DIR="~/.myConfig/.nvm"
 
 #  Add to path for CCACHE
@@ -80,5 +83,5 @@ if [[ -v GCC_PATH ]]; then
 else
   echo "Adding GCC_PATH to path"
   export GCC_PATH="true"
-  export PATH="/opt/homebrew/opt/gcc/lib/gcc/12:/opt/homebrew/opt/libgccjit/lib/gcc/12:/opt/homebrew/opt/gcc/lib/gcc/12/gcc/aarch64-apple-darwin21/12:$PATH"
+  export PATH="/opt/homebrew/bin:/opt/homebrew/opt/gcc/lib/gcc/12:/opt/homebrew/opt/libgccjit/lib/gcc/12:/opt/homebrew/opt/gcc/lib/gcc/12/gcc/aarch64-apple-darwin21/12:$PATH"
 fi
