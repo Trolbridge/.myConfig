@@ -1,4 +1,14 @@
-#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Added these for compdef in aliases.git
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+ 
+autoload -Uz compinit
+compinit
+
+
+source aliases.git
+source aliases.ls
 
 # Check if $ZSH is empty directory
 #if [ "$(ls -A $ZSH)" ]; then
