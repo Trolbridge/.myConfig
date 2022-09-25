@@ -75,3 +75,10 @@ else
   export GUILE_TLS_CERTIFICATE_DIRECTORY="/opt/homebrew/etc/gnutls/"
 fi
 
+#  Add to path for GCC_PATH
+if [[ -v GCC_PATH ]]; then
+else
+  echo "Adding GCC_PATH to path"
+  export GCC_PATH="true"
+  export PATH="/opt/homebrew/opt/gcc/lib/gcc/12:/opt/homebrew/opt/libgccjit/lib/gcc/12:/opt/homebrew/opt/gcc/lib/gcc/12/gcc/aarch64-apple-darwin21/12:$PATH"
+fi
