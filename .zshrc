@@ -22,10 +22,14 @@ source ~/.myConfig/unsets.txt
 
 
 alias v="nvim"
-alias gcc="gcc-12"
-alias g++="g++-12"
-alias clang="gcc-12"
-alias clang++="g++-12"
+# homebrew gcc
+#alias gcc="gcc-12"
+#alias g++="g++-12"
+#alias clang="gcc-12"
+#alias clang++="g++-12"
+# LLVM
+alias gcc="clang"
+alias g++="clang++"
 
 # Directory make and jump into
 m ()
@@ -81,7 +85,21 @@ fi
 #  Add to path for GCC_PATH
 if [[ -v GCC_PATH ]]; then
 else
-  echo "Adding GCC_PATH to path"
+  # echo "Adding GCC_PATH to path"
   export GCC_PATH="true"
-  export PATH="/opt/homebrew/bin:/opt/homebrew/opt/gcc/lib/gcc/12:/opt/homebrew/opt/libgccjit/lib/gcc/12:/opt/homebrew/opt/gcc/lib/gcc/12/gcc/aarch64-apple-darwin21/12:$PATH"
+  export PATH="/opt/homebrew/bin:/opt/homebrew/opt/gcc/lib/gcc/12:/opt/homebrew/opt/libgccjit/lib/gcc/12::$PATH"
+  # export PATH="/opt/homebrew/bin:/opt/homebrew/opt/gcc/lib/gcc/12:/opt/homebrew/opt/libgccjit/lib/gcc/12:/opt/homebrew/opt/gcc/lib/gcc/12/gcc/aarch64-apple-darwin21/12:$PATH"
+fi
+
+#  Add to path for LLVM
+if [[ -v LLVM ]]; then
+else
+  echo "Adding LLVM to path"
+  export LLVM="true"
+  export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+  # To use the bundled libc++ please add the following LDFLAGS:
+  export LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm/lib/c++"
+  # For compilers to find llvm you may need to set:
+  export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 fi
