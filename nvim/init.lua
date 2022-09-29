@@ -1,4 +1,4 @@
-
+HOME = os.getenv("HOME")
 vim.cmd([[
 set notimeout
 set encoding=utf-8
