@@ -55,7 +55,8 @@ if [[ -v CCACHE ]]; then
 else
 #  echo "Adding CCACHE to path"
   export CCACHE="true"
-  export PATH="/opt/homebrew/opt/ccache/libexec:$PATH"
+  export PATH="/usr/local/opt/ccache/libexec:$PATH"
+#/usr/local/bin/brew
 fi
 
 #  Add to path for TEXTINFO
@@ -63,7 +64,7 @@ if [[ -v TEXTINFO ]]; then
 else
 #  echo "Adding TEXTINFO to path"
   export TEXTINFO="true"
-  export PATH="/opt/homebrew/opt/texinfo/bin:$PATH"
+  export PATH="/usr/local/opt/texinfo/bin:$PATH"
 fi
 
 #  Add to path for LIBXML2
@@ -71,18 +72,10 @@ if [[ -v LIBXML2 ]]; then
 else
 #  echo "Adding LIBXML2 to path"
   export LIBXML2="true"
-  export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
-  export PKG_CONFIG_PATH="/opt/homebrew/opt/libxml2/lib/pkgconfig"
-  export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include"
-fi
-
-#  Add to path for GNUTLS
-if [[ -v GNUTLS ]]; then
-else
-#  echo "Adding Guile TLS Certifcate Directory"
-  export GNUTLS="true"
-  export GUILE_TLS_CERTIFICATE_DIRECTORY="/opt/homebrew/etc/gnutls/"
+  export PATH="/usr/local/opt/libxml2/bin:$PATH"
+  export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
+  export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+  export CPPFLAGS="-I/usr/local/opt/libxml2/include"
 fi
 
 #  Add to path for GCC_PATH
@@ -90,19 +83,26 @@ if [[ -v GCC_PATH ]]; then
 else
   # echo "Adding GCC_PATH to path"
   export GCC_PATH="true"
-  export PATH="/opt/homebrew/bin:/opt/homebrew/opt/gcc/lib/gcc/12:/opt/homebrew/opt/libgccjit/lib/gcc/12::$PATH"
-  # export PATH="/opt/homebrew/bin:/opt/homebrew/opt/gcc/lib/gcc/12:/opt/homebrew/opt/libgccjit/lib/gcc/12:/opt/homebrew/opt/gcc/lib/gcc/12/gcc/aarch64-apple-darwin21/12:$PATH"
+  export PATH="/usr/local/opt/gcc/lib/gcc/12:/usr/local/opt/libgccjit/lib/gcc/12:$PATH"
+fi
+
+#  Add to path for GNUTLS
+if [[ -v GNUTLS ]]; then
+else
+#  echo "Adding Guile TLS Certifcate Directory"
+  export GNUTLS="true"
+  export GUILE_TLS_CERTIFICATE_DIRECTORY="/usr/local/etc/gnutls/"
 fi
 
 #  Add to path for LLVM
 if [[ -v LLVM ]]; then
 else
-  echo "Adding LLVM to path"
+###  echo "Adding LLVM to path"
   export LLVM="true"
-  export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+  export PATH="/usr/local/opt/llvm/bin:$PATH"
   # To use the bundled libc++ please add the following LDFLAGS:
-  export LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm/lib/c++"
+  export LDFLAGS="-L/usr/local/opt/llvm/lib/c++ -Wl,-rpath,/usr/local/opt/llvm/lib/c++"
   # For compilers to find llvm you may need to set:
-  export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+  export LDFLAGS="-L/usr/local/opt/llvm/lib"
+  export CPPFLAGS="-I/usr/local/opt/llvm/include"
 fi
