@@ -49,3 +49,4 @@ set termguicolors
 
 "inoremap <C-b> <Esc>:NERDTreeToggle<cr>
 "nnoremap <C-b> <Esc>:NERDTreeToggle<cr>
+long_hair_vimrc
